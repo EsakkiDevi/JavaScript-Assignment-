@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alien Registration Form</title>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="stylealien.css">
+</head>
+<body>
+ <div class="container">
+     <h1>Alien Registration Form</h1>
+       
+  <form>
+   
+    <label for="planetname">Planet Name</label>
+    <div class="input-container">
+      <i class="fa-solid fa-globe"></i>
+      <input type="text" id="planetname" placeholder="Planet Name">
+      <span id="errorplanetname"></span>
+    </div>
+
+    <label for="antennacount">Antenna Count</label>
+    <div class="input-container">
+      <i class="fa-solid fa-satellite-dish"></i>
+      <input type="number" id="antennacount" placeholder="Antenna Count">
+      <span id="errorantennacount"></span>
+    </div>
+
+    <label for="alienid">Alien ID</label>
+    <div class="input-container">
+      <i class="fa-solid fa-id-card"></i>
+      <input type="text" id="alienid" placeholder="Alien ID">
+      <span id="erroralienid"></span>
+    </div>
+
+
+    <label for="humanphrase">Favorite Human Phrase<label>
+        <div class="input-container">
+      <i class="fa-solid fa-comment-dots"></i>
+      <input type="text" id="humanphrase" placeholder="Favorite Human Phrase">
+      <span id="errorhumanphrase"></span>
+    </div>
+
+    <label for="landingdate">Landing Date</label>
+    <div class="input-container">
+      <i class="fa-solid fa-calendar-day"></i>
+      <input type="date" id="landingdate">
+    </div>
+
+    <label for="alienphoto">Profile Picture</label>
+<div class="input-container">
+  <i class="fa-solid fa-user-astronaut"></i>
+  <input type="file" id="alienphoto" accept="image/png, image/jpeg, image/jpg">
+</div>
+
+<div class="preview-container">
+  <img id="preview" src="" alt="Profile Preview" />
+</div>
+
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+<script src="scriptalien.js"></script>
+</body>
+</html>
