@@ -1,67 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alien Registration Form</title>
-
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="stylealien.css">
 </head>
+
 <body>
- <div class="container">
-     <h1>Alien Registration Form</h1>
-       
-  <form>
-   
-    <label for="planetname">Planet Name</label>
-    <div class="input-container">
-      <i class="fa-solid fa-globe"></i>
-      <input type="text" id="planetname" placeholder="Planet Name">
-      <span id="errorplanetname"></span>
+  <div class="container">
+    <div class="registration-container">
+      <h1 class="alien-title">
+        <i class="bi bi-rocket-takeoff"></i> Galactic Visitor Registration
+      </h1>
+
+      <form id="alienForm" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="planetName" class="form-label"><i class="bi bi-globe"></i> Planet of Origin</label>
+            <input type="text" class="form-control" id="planetName" placeholder="e.g., Zephyr7" required>
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="antennaCount" class="form-label"><i class="bi bi-broadcast"></i> Antenna Count</label>
+            <input type="number" class="form-control" id="antennaCount" placeholder="Even numbers only" required>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alienId" class="form-label"><i class="bi bi-qr-code"></i> Alien Identification Code</label>
+          <input type="text" class="form-control" id="alienId" placeholder="Format: ZOR-XY_9999@UFO" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="favoritePhrase" class="form-label"><i class="bi bi-emoji-smile"></i> Favorite Human Phrase</label>
+          <input type="text" class="form-control" id="favoritePhrase" placeholder="Must include emoji or punctuation! 🛸" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="eyeCount" class="form-label"><i class="bi bi-eye"></i> Number of Eyes</label>
+            <input type="number" class="form-control" id="eyeCount" min="0" max="100" required>
+            <div class="invalid-feedback">Please enter a valid eye count (0–100).</div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="landingDate" class="form-label"><i class="bi bi-calendar-check"></i> Landing Date</label>
+            <input type="date" class="form-control" id="landingDate" required>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="visitPurpose" class="form-label"><i class="bi bi-airplane"></i> Purpose of Visit</label>
+          <select class="form-select" id="visitPurpose" required>
+            <option value="">Select purpose</option>
+            <option>Tourism</option>
+            <option>Research</option>
+            <option>Diplomacy</option>
+            <option>Trade</option>
+            <option>Refuge</option>
+            <option>Conquest</option>
+            <option>Other</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="atmosphereType" class="form-label"><i class="bi bi-cloud"></i> Preferred Atmosphere</label>
+          <select class="form-select" id="atmosphereType" required>
+            <option value="">Select atmosphere</option>
+            <option>Oxygen-based</option>
+            <option>Methane-based</option>
+            <option>Helium-based</option>
+            <option>Vacuum</option>
+            <option>Toxic gases</option>
+            <option>Custom mixture</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="emergencyContact" class="form-label"><i class="bi bi-person-lines-fill"></i> Emergency Contact</label>
+          <input type="text" class="form-control" id="emergencyContact" placeholder="Home planet contact" required>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-alien btn-lg" id="submitBtn" disabled>
+            <i class="bi bi-send-fill"></i> Submit Registration
+          </button>
+        </div>
+      </form>
     </div>
-
-    <label for="antennacount">Antenna Count</label>
-    <div class="input-container">
-      <i class="fa-solid fa-satellite-dish"></i>
-      <input type="number" id="antennacount" placeholder="Antenna Count">
-      <span id="errorantennacount"></span>
-    </div>
-
-    <label for="alienid">Alien ID</label>
-    <div class="input-container">
-      <i class="fa-solid fa-id-card"></i>
-      <input type="text" id="alienid" placeholder="Alien ID">
-      <span id="erroralienid"></span>
-    </div>
-
-
-    <label for="humanphrase">Favorite Human Phrase<label>
-        <div class="input-container">
-      <i class="fa-solid fa-comment-dots"></i>
-      <input type="text" id="humanphrase" placeholder="Favorite Human Phrase">
-      <span id="errorhumanphrase"></span>
-    </div>
-
-    <label for="landingdate">Landing Date</label>
-    <div class="input-container">
-      <i class="fa-solid fa-calendar-day"></i>
-      <input type="date" id="landingdate">
-    </div>
-
-    <label for="alienphoto">Profile Picture</label>
-<div class="input-container">
-  <i class="fa-solid fa-user-astronaut"></i>
-  <input type="file" id="alienphoto" accept="image/png, image/jpeg, image/jpg">
-</div>
-
-<div class="preview-container">
-  <img id="preview" src="" alt="Profile Preview" />
-</div>
-
-    <input type="submit" value="Submit">
-  </form>
   </div>
-<script src="scriptalien.js"></script>
+
+  <script src="scriptalien.js">
+   
+   
+  </script>
 </body>
 </html>
